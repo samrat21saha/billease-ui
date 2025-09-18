@@ -9,6 +9,7 @@ const App = () => {
     return (
         <div>
             <Menubar />
+            <Toaster />
             <Routes>
                 <Route path="/dashboard" element={<Dashboard />}/>
                 <Route path="/category" element={<ManageCategories />}/>
