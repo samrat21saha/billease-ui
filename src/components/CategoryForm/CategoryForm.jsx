@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
+import toast from "react-hot-toast";
 
 const CategoryForm = () => {
-
+    const {setCategories, categories} = useContext(AppContext);
     const [loading, setLoading] = useState(false);
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
@@ -19,6 +20,39 @@ const CategoryForm = () => {
             ...data,
             [name]: value
         }));
+    }
+
+
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        if(!image){
+            toast.error("please upload an image");
+            setLoading(false);
+            return;
+        }
+        const formData = new FormData();
+        formData.append("category", JSON.stringify(data));
+        formData.append("file", image);
+        try {
+            const response = await createCategory(formData);
+            if(response.status === 201){
+                setCategories([...categories, response.data]);
+                toast.success("Category created successfully");
+                setData({
+                    name: "",
+                    description: "",
+                    bgColor: "#2c2c2c",
+                });
+                setImage(false);
+            }
+        }catch(err){
+            console.log(err);
+            toast.error("Error occurred while creating category");
+        }finally{
+            setLoading(false);
+        }
+        
     }
 
 
@@ -72,7 +106,9 @@ const CategoryForm = () => {
                                         placeholder="#ffffff"
                                 />
                             </div>
-                            <button type="submit" className="btn btn-warning w-100" >Save</button>
+                            <button type="submit"
+                                    disabled={loading} 
+                                    className="btn btn-warning w-100" >{loading ? "Loading..." : "Submit"}</button>
 
                         </form>
                     </div>
