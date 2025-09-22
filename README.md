@@ -1,12 +1,17 @@
-# BillEase - a smart billing & payments management platform
+BillEase – Smart Billing & Payments Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules
+BillEase is a full-stack web application designed to streamline billing, invoicing, and payments management with a modern and intuitive UI. Built using React (Vite) for the frontend and Spring Boot for the backend, it provides an efficient and scalable solution for businesses.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📦 Category & Item Management – add, update, search, and delete products
 
-## Expanding the ESLint configuration
+👥 User Management – register and manage users securely
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛒 Cart & Checkout Flow – explore items, add to cart, and manage summary
+
+🔐 Authentication – JWT-based login with secure token storage
+
+🎨 Responsive UI – clean design with custom CSS and Bootstrap integration
+
+🛠 Toast Notifications – real-time feedback for user actions
