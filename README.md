@@ -15,3 +15,8 @@ BillEase is a full-stack web application designed to streamline billing, invoici
 🎨 Responsive UI – clean design with custom CSS and Bootstrap integration
 
 🛠 Toast Notifications – real-time feedback for user actions
+
+## 🖥️ Tech Stack  
+- **Frontend:** React (Vite), Axios, React Router, Bootstrap, React Hot Toast  
+- **Backend:** Spring Boot, REST APIs, JWT Authentication  
+- **Database:** MySQL / PostgreSQL (configurable)
