@@ -62,3 +62,31 @@ This will start the backend on [http://localhost:8080](http://localhost:8080).
 - Frontend: [http://localhost:5173](http://localhost:5173)
  
 - Backend APIs: [http://localhost:8080](http://localhost:8080
+
+
+
+## 📂 Project Structure
+```
+billease-ui
+├── node_modules
+├── public
+└── src
+├── assets
+├── components
+│ ├── CategoryForm
+│ ├── CategoryList
+│ ├── ItemForm
+│ ├── ItemList
+│ ├── Menubar
+│ ├── UserForm
+│ └── UserList
+├── context
+├── pages
+│ ├── Dashboard
+│ ├── Explore
+│ ├── Login
+│ ├── ManageCategories
+│ ├── ManageItems
+│ └── ManageUsers
+└── Service
+```
