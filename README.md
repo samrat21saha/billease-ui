@@ -1,12 +1,92 @@
-# BillEase - a smart billing & payments management platform
+BillEase – Smart Billing & Payments Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules
+BillEase is a full-stack web application designed to streamline billing, invoicing, and payments management with a modern and intuitive UI. Built using React (Vite) for the frontend and Spring Boot for the backend, it provides an efficient and scalable solution for businesses.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📦 Category & Item Management – add, update, search, and delete products
 
-## Expanding the ESLint configuration
+👥 User Management – register and manage users securely
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛒 Cart & Checkout Flow – explore items, add to cart, and manage summary
+
+🔐 Authentication – JWT-based login with secure token storage
+
+🎨 Responsive UI – clean design with custom CSS and Bootstrap integration
+
+🛠 Toast Notifications – real-time feedback for user actions
+
+## 🖥️ Tech Stack  
+- **Frontend:** React (Vite), Axios, React Router, Bootstrap, React Hot Toast  
+- **Backend:** Spring Boot, REST APIs, JWT Authentication  
+- **Database:** MySQL / PostgreSQL (configurable)
+
+## 🚀 Running the Project Locally    Follow these steps to set up and run **BillEase** on your local machine:
+### 1️⃣ Clone the Repository   ```bash git clone https://github.com/samrat21saha/billease-ui.git cd billease-ui ` 
+### 2️⃣ Install Dependencies
+ 
+Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+ `npm install ` 
+### 3️⃣ Start the Frontend (React + Vite)
+ `npm run dev ` 
+This will start the frontend on [http://localhost:5173](http://localhost:5173).
+ 
+### 4️⃣ Backend Setup (Spring Boot)
+ 
+ 
+- Navigate to the backend project folder.
+ 
+- Make sure you have **Java 17+** and **Maven** installed.
+ 
+- Update your `application.properties` with
+DB credentials.
+ 
+
+ `mvn spring-boot:run ` 
+This will start the backend on [http://localhost:8080](http://localhost:8080).
+ 
+### 5️⃣ Database Setup
+ 
+ 
+- Install **MySQL** or **PostgreSQL** (based on your config).
+ 
+- Create a new database (e.g., `billease_db`).
+ 
+- Update DB details in `application.properties`.
+ 
+
+ 
+### 6️⃣ Access the Application
+ 
+ 
+- Frontend: [http://localhost:5173](http://localhost:5173)
+ 
+- Backend APIs: [http://localhost:8080](http://localhost:8080
+
+
+
+## 📂 Project Structure
+```
+billease-ui
+├── node_modules
+├── public
+└── src
+├── assets
+├── components
+│ ├── CategoryForm
+│ ├── CategoryList
+│ ├── ItemForm
+│ ├── ItemList
+│ ├── Menubar
+│ ├── UserForm
+│ └── UserList
+├── context
+├── pages
+│ ├── Dashboard
+│ ├── Explore
+│ ├── Login
+│ ├── ManageCategories
+│ ├── ManageItems
+│ └── ManageUsers
+└── Service
+```
