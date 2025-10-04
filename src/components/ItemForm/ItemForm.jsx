@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { Form } from "react-router-dom";
 
 const ItemForm = () => {
+    const {categories, setItemsData, itemsData, setCategories} = useContext(AppContext);
     const [image, setImage] = useState(false);
     const [loading , setLoading] = useState(false);
     const [data, setData] = useState( {
         name: "",
-        category: "",
+        categoryId: "",
         price: "",
         description: ""
     });
@@ -13,11 +16,50 @@ const ItemForm = () => {
     
 
     const onChangeHandler = (e) => {
-
+        const value = e.target.value;
+        const name = e.target.name;
+        setData((data) => ({
+            ...prevData,
+            [name]: value
+        }));
     }
 
-    const onSubmitHandler = (e) => {
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        const formData = new FormData();
+        formData.append("item", JSON.stringify(data));
+        formData.append("file", image);
+        try{
+            if(!image){
+                toast.error("Select image");
+                return
+            }
+            const response = await addItem(formData);
+            if(response.status === 201){
+                // handle success
+                setItemsData([...itemsData, response.data]);
+                
+                setCategories((prevCategories) =>  prevCategories.map((category) => 
+                    category.categoryId === data.categoryId ? {...category, items: category.items + 1} : category));
+
+                toast.success("Item added");
+                setData({
+                    name: "",
+                    categoryId: "",
+                    price: "",
+                    description: ""
+                })
+                setImage(false);
+            } else {
+                toast.error("Failed to add item");
+            }
+        } catch (error) {
+            toast.error("Failed to add item");
+            console.error(error);
+        }finally{
+            setLoading(false);
+        }
     }
 
     return (
@@ -29,9 +71,9 @@ const ItemForm = () => {
                             <form onSubmit={onSubmitHandler}>
                                 <div className="mb-3">
                                     <label htmlFor="image" className="form-label">
-                                        <img src="https://placehold.co/48x48" alt="" width={48} />
+                                        <img src={image ? URL.createObjectURL(image): assets.upload} alt="" width={48} />
                                     </label>
-                                    <input type="file" name="image" id="image" className="form-control" hidden onChange={onChangeHandler}/>
+                                    <input type="file" name="image" id="image" className="form-control" hidden onChange={(e) =>setImage(e.target.files[0])}/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="name" className="form-label">Name</label>
@@ -48,13 +90,11 @@ const ItemForm = () => {
                                     <label htmlFor="category" className="form-label">
                                         Category
                                     </label>
-                                    <select name="category" id="category" className="form-control" onChange={onChangeHandler} value={data.category}>
+                                    <select name="categorId" id="category" className="form-control" onChange={onChangeHandler} value={data.categoryId}>
                                         <option value="">--SELECT CATEGORY--</option>
-                                        <option value="Category 1">Category 1</option>
-                                        <option value="Category 2">Category 2</option>
-                                        <option value="Category 3">Category 3</option>
-                                        <option value="Category 4">Category 4</option>
-                                        <option value="Category 5">Category 5</option>
+                                        {categories.map((category, index) => (
+                                            <option key={index} value={category.categoryId}>{category.name}</option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className="mb-3">
