@@ -90,8 +90,10 @@ billease-ui
 │ └── ManageUsers
 └── Service
 ```
-more to add
-today's commit
-1st Nov 2025 contribution I will be consistent from today!!!
-3-11-2025 I will surely start the nodejs backend project subscription tracker and push to github daily!!!
-today is 03-11-12 I started a new flutter project
+- more to add
+- today's commit
+- 1st Nov 2025 contribution I will be consistent from today!!!
+- 3-11-2025 I will surely start the nodejs backend project subscription tracker and push to github daily!!!
+- today is 03-11-12 I started a new flutter project
+- Flutter interview was good got a new experience
+- I will start proper nodejs dev and flutter dev from tomorrow
