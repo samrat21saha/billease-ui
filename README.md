@@ -97,3 +97,5 @@ billease-ui
 - today is 03-11-12 I started a new flutter project
 - Flutter interview was good got a new experience
 - I will start proper nodejs dev and flutter dev from tomorrow
+- Today also not started Nodejs
+- Had a preplacement session for data analyst campus placement and got take home assignment dashboard building and reporting with summary and overview within next Thursday
