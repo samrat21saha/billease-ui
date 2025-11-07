@@ -99,3 +99,5 @@ billease-ui
 - I will start proper nodejs dev and flutter dev from tomorrow
 - Today also not started Nodejs
 - Had a preplacement session for data analyst campus placement and got take home assignment dashboard building and reporting with summary and overview within next Thursday
+- final touch of FOSS design delivered
+- from Sunday I will start Node project surely
