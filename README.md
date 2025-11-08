@@ -101,3 +101,4 @@ billease-ui
 - Had a preplacement session for data analyst campus placement and got take home assignment dashboard building and reporting with summary and overview within next Thursday
 - final touch of FOSS design delivered
 - from Sunday I will start Node project surely
+- FOSS November meetup 2025 sorted great experience it was
