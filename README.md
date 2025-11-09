@@ -102,3 +102,4 @@ billease-ui
 - final touch of FOSS design delivered
 - from Sunday I will start Node project surely
 - FOSS November meetup 2025 sorted great experience it was
+- today busy in assignments and ppts
